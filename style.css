@@ -44,6 +44,7 @@ body {
   border: 5px solid #483d8b;
   background-color: #e6d5e3;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .btn:hover {
@@ -58,10 +59,11 @@ body {
   border: 5px solid #483d8b;
   background-color: #e6e6fa;
   margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 .num {
-  background-color: #FFB6C1;
+  background-color: #ffb6c1;
 }
 
 .action {
@@ -69,5 +71,5 @@ body {
 }
 
 .operator {
-  background-color: #AFEEEE;
+  background-color: #afeeee;
 }
