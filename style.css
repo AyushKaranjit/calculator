@@ -58,7 +58,7 @@ body {
   text-align: right;
   border: 5px solid #483d8b;
   background-color: #e6e6fa;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   border-radius: 10px;
 }
 
@@ -66,10 +66,19 @@ body {
   background-color: #ffb6c1;
 }
 
-.action {
+.AC,
+.C {
   background-color: #87cefa;
 }
 
 .operator {
   background-color: #afeeee;
+}
+
+.operator2 {
+  background-color: #FFDAB9;
+}
+
+.equalsTo {
+  background-color: #98fb98;
 }
