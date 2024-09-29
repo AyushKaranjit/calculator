@@ -46,37 +46,60 @@ let num1 = "";
 let num2 = "";
 let operation = "";
 let result = "";
+const maxLength = 11;
+
+function formatOutput(value) {
+  value = parseFloat(value).toFixed(2);
+  if (value.length > maxLength) {
+    value = parseFloat(value).toExponential(2);
+  }
+  return value;
+}
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const value = button.textContent;
 
     if (value >= "0" && value <= "9") {
-      displayValue += value;
-      display.textContent = displayValue;
+      if (displayValue.length < maxLength) {
+        displayValue += value;
+        display.textContent = displayValue;
+      }
     } else if (
       value === "+" ||
       value === "-" ||
       value === "*" ||
       value === "/"
     ) {
-      num1 = displayValue;
+      if (num1 && operation) {
+        num2 = displayValue;
+        result = operate(num1, num2, operation);
+        result = formatOutput(result);
+        display.textContent = result;
+        num1 = result;
+        displayValue = "";
+      } else {
+        num1 = displayValue;
+        displayValue = "";
+      }
       operation = value;
-      displayValue = "";
+    } else if (value === "=") {
+      if (num1 && operation) {
+        num2 = displayValue;
+        result = operate(num1, num2, operation);
+        result = formatOutput(result);
+        display.textContent = result;
+        displayValue = result;
+        num1 = "";
+        num2 = "";
+        operation = "";
+      }
     } else if (value === "%") {
       displayValue = percentage(displayValue);
       display.textContent = displayValue;
     } else if (value === ".") {
       displayValue = dot(displayValue);
       display.textContent = displayValue;
-    } else if (value === "=") {
-      num2 = displayValue;
-      result = operate(num1, num2, operation);
-      display.textContent = result;
-      displayValue = result;
-      num1 = "";
-      num2 = "";
-      operation = "";
     } else if (value === "AC") {
       displayValue = "";
       num1 = "";
