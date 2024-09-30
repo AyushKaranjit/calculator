@@ -33,7 +33,7 @@ body {
     "0 . =";
 }
 
-.btn.zero {
+.btn.btn-0 {
   grid-column: span 2;
 }
 
