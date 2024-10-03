@@ -85,15 +85,19 @@ body {
 
 @media screen and (max-width: 600px) {
   .calculator {
-    padding: 20px;
+    padding: 2rem;
   }
 
   .btn {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
   }
 
   .display {
     font-size: 2rem;
+  }
+
+  .btn:hover {
+    background-color: none;
   }
 }
