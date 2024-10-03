@@ -47,7 +47,15 @@ let num1 = "";
 let num2 = "";
 let operation = "";
 let result = "";
-const maxLength = 10;
+// const maxLength = 10;
+
+function updateMaxLength() {
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    maxLength = 7;
+  } else {
+    maxLength = 10;
+  }
+}
 
 function formatOutput(value) {
   if (value.toString().length > maxLength) {
@@ -195,3 +203,6 @@ document.addEventListener("keydown", function (event) {
     display.textContent = "0";
   }
 });
+
+window.addEventListener("load", updateMaxLength);
+window.addEventListener("resize", updateMaxLength);
