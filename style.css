@@ -133,16 +133,16 @@ body {
 
 @media screen and (max-width: 600px) {
   .calculator {
-    padding: 2rem;
+    padding: 1.75rem;
   }
 
   .btn {
-    padding: 1rem;
-    font-size: 1.5rem;
+    padding: 0.75rem;
+    font-size: 1.25rem;
   }
 
   .display {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .btn:hover {
