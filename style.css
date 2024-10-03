@@ -133,9 +133,11 @@ body {
 
 @media screen and (max-width: 600px) {
   body {
-    height: 75vh;
+    height: 100vh;
   }
   .calculator {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     padding: 1.75rem;
   }
 
