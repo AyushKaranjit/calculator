@@ -50,11 +50,14 @@ let result = "";
 const maxLength = 10;
 
 function formatOutput(value) {
-  value = parseFloat(value).toFixed(2);
-  if (value.length > maxLength) {
-    value = parseFloat(value).toExponential(2);
+  if (value.toString().length > maxLength) {
+    return parseFloat(value).toExponential(2);
+  } else if (Number.isInteger(parseFloat(value))) {
+    return value;
+  } else {
+    value = parseFloat(value).toFixed(2);
+    return value;
   }
-  return value;
 }
 
 buttons.forEach((button) => {
